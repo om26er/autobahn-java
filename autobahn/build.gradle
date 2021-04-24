@@ -127,19 +127,6 @@ if (IS_ANDROID) {
             variant.javaCompile.classpath.files
         })
     }
-
-    publishing {
-        repositories {
-            maven {
-                name 'central'
-                url 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
-                credentials {
-                    username SONATYPE_USER
-                    password SONATYPE_PASS
-                }
-            }
-        }
-    }
 } else {
     task sourcesJar(type: Jar, dependsOn: classes) {
         archiveClassifier.set("sources")
